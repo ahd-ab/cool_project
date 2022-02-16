@@ -20,5 +20,6 @@ public:
     explicit XorCover(std::unique_ptr<ICover> inner_cover);
 
     void wrap(const std::vector<char> &data) override;
+    std::vector<char> unwrap(const std::vector<char> &data) override;
 
 };
