@@ -9,12 +9,3 @@ public:
     virtual std::vector<char> unwrap(const std::vector<char> &data) = 0;
 
 };
-
-
-
-
-
-
-
-
-
