@@ -23,3 +23,8 @@ void UDPCover::wrap(const std::vector<char> &data) {
     size_t sending_res = sendto(m_sock, data, data.size(), 0, (struct sockaddr*) &target_address, sizeof(target_address));
 
 }
+
+std::unique_ptr<std::vector<char>> UDPCover::unwrap() {
+
+    return std::make_unique<std::vector<char>>();
+}
