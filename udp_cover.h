@@ -5,7 +5,7 @@
 
 #include "icover.h"
 
-#define TARGET_IP "127.0.0.1"
+#define TARGET_IP "1.2.3.4"
 #define TARGET_PORT 11111
 
 class UDPCover: public ICover {
@@ -13,14 +13,14 @@ class UDPCover: public ICover {
 public:
 
     explicit UDPCover();
-    ~UDPCover();
+    ~UDPCover() override;
     UDPCover(const UDPCover&) = delete;
     UDPCover(const UDPCover&&) = delete;
     const UDPCover& operator=(const UDPCover&) = delete;
 
-    virtual void wrap(const std::vector<char>& data) = 0;
+    void wrap(const std::vector<char>& data) override;
 
-    virtual std::unique_ptr<std::vector<char>> unwrap() = 0;
+    std::unique_ptr<std::vector<char>> unwrap() override;
 
 private:
     int m_sock;
